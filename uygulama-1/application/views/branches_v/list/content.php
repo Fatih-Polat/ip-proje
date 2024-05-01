@@ -18,12 +18,12 @@
                   <div class="row">
 
                     <div class="col-md-6">
-                      <h3 class="card-title">Ürün Kategorileri Listesi</h3>
+                      <h3 class="card-title">Şubeler Listesi</h3>
                     </div>
 
                     <div class="col-md-6 text-right">
-                      <a href="<?php echo base_url("Product_Category/new_form") ?>" class="btn btn-success btn-xs mb-2 ">
-                      <i class="fas fa-plus"></i> Yeni Kategori Ekle</a>
+                      <a href="<?php echo base_url("Branches/new_form") ?>" class="btn btn-success btn-xs mb-2 ">
+                      <i class="fas fa-plus"></i> Yeni Şube Ekle</a>
                     </div>
 
                   </div>
@@ -35,8 +35,8 @@
                     <thead>
                       <tr>
                         <th>ID</th>
-                        <th>Ürün Kategorisi</th>
-                        <th>Durum</th>
+                        <th>Şube Adı</th>
+                        <th>Adres</th>
                         <th>Oluşturma Tarihi</th>
                         <th>İşlemler</th>
                       </tr>
@@ -47,12 +47,12 @@
                         <tr>
                           <td><?php echo $item->id; ?></td>
                           <td><?php echo $item->title; ?></td>
-                          <td><?php echo $item->is_active == 0 ? "Pasif" : "Aktif"; ?></td>
+                          <td><?php echo $item->address ?></td>
                           <td><?php echo dateTimeFormat($item->createdAt); ?></td>
                           <td>
-                          <a href="<?php echo base_url("Product_Category/delete/$item->id")?>" class="btn btn-danger" > SİL </a>  
+                          <a href="<?php echo base_url("Branches/delete/$item->id")?>" class="btn btn-danger" > SİL </a>  
                           
-                          <a href="<?php echo base_url("Product_Category/update_form/$item->id")?>" class="btn btn-info" > GÜNCELLE </a></td>
+                          <a href="<?php echo base_url("Branches/update_form/$item->id")?>" class="btn btn-info" > GÜNCELLE </a></td>
                         </tr>
                       <?php } ?>
 
